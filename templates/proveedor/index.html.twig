@@ -1,0 +1,141 @@
+{% extends 'base.html.twig' %}
+
+
+
+
+{% block content %}
+<div class="container-fluid">
+    <div class="list-group">
+
+        <div class="align-items-center">
+            <il class="list-group-item">
+                <div class="container align-items-center">
+                    <div class="row align-items-center">
+                        <div class="col align-items-center">
+                            <div class="row text-center align-items-center">
+                                <div class="col">
+                                    <strong>Nombre</strong>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col align-items-center">
+                            <div class="row text-center align-items-center ">
+                                <div class="col">
+                                    <strong>Correo</strong>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" col align-items-center">
+                            <div class="row text-center align-items-center">
+                                <div class="col">
+                                    <strong>Telefono</strong>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" col align-items-center">
+                            <div class="row text-center align-items-center">
+                                <div class="col">
+                                    <strong>Tipo de proveedor</strong>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" col align-items-center">
+                            <div class="row text-center align-items-center">
+                                <div class="col">
+                                    <strong>Fecha de creación</strong>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" col align-items-center">
+                            <div class="row text-center align-items-center">
+                                <div class="col">
+                                    <strong>Ultima modifcación</strong>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" col align-items-center">
+                            <div class="row text-center align-items-center">
+                                <div class="col">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </il>
+            {% for proveedor in proveedores_list %}
+                <div class="align-items-center">
+                    <il class="list-group-item">
+                        <div class="container align-items-center">
+                            <div class="row align-items-center">
+                                <div class="col align-items-center">
+                                    <div class="row text-center align-items-center">
+                                        <div class="col">
+                                            {{ proveedor.name }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col align-items-center">
+                                    <div class="row text-center align-items-center">
+                                        <div class="col-1 position-fixed">
+                                            <div class="text-center ">
+                                                {{ proveedor.mail }}
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class=" col align-items-center">
+                                    <div class="row text-center align-items-center">
+                                        <div class="col ">
+                                            {{ proveedor.telephone }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class=" col align-items-center">
+                                    <div class="row text-center align-items-center">
+                                        <div class="col">
+                                            {{ proveedor.type }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class=" col align-items-center">
+                                    <div class="row text-center align-items-center">
+                                        <div class="col">
+                                            {{ proveedor.createDate|date('Y-m-d') }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class=" col align-items-center">
+                                    <div class="row text-center align-items-center">
+                                        <div class="col">
+                                            {{ proveedor.updateDate|date('Y-m-d') }}
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col text-center align-items-center" >
+                                    <a id="editButton"
+                                       href="{{ path('edit_proveedor',{'id': proveedor.id }) }}"
+                                       class="border-0 btn btn-primary" style="background: transparent"><i
+                                                class="fas fa-edit" style="color: #4e73df">Editar</i></a>
+                                    <a id="editButton"
+                                       href="{{ path('delete_proveedor',{'id': proveedor.id }) }}"
+                                       class="border-0 btn btn-primary" style="background: transparent"><i
+                                                class="fas fa-trash" style="color: #4e73df">Borrar</i></a>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </il>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
