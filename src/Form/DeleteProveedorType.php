@@ -13,7 +13,6 @@ class DeleteProveedorType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('Volver', SubmitType::class)
             ->add('Borrar', SubmitType::class)
         ;
     }

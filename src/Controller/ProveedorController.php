@@ -10,6 +10,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
+use function PHPUnit\Framework\isEmpty;
 
 class ProveedorController extends AbstractController
 {
@@ -66,6 +67,7 @@ class ProveedorController extends AbstractController
      */
     public function addProveedores(Request $request): Response
     {
+
         $entityManager = $this->getDoctrine()->getManager();
         $proveedor = new Proveedor();
         $form = $this->createForm(AddProveedorType::class,$proveedor);
