@@ -31,7 +31,7 @@ class AddProveedorType extends AbstractType
                 'widget' => 'single_text',
                 'disabled' => 'true'
             ])
-            ->add('Añadir', SubmitType::class)
+            ->add('Agregar', SubmitType::class)
         ;
     }
 

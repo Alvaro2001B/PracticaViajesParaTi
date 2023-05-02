@@ -38,7 +38,10 @@
                     </div>
                     <div class="row text-center">
                         <div class="col">
-                            {{ form_row(form.Añadir) }}
+                            <a href="{{ path('app_proveedor') }}">Volver</a>
+                        </div>
+                        <div class="col">
+                            {{ form_row(form.Agregar) }}
                         </div>
                     </div>
                     {{ form_end(form) }}
